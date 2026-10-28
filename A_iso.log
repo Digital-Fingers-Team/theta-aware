@@ -1,0 +1,26 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-14 19:22:41,964: Loading account with the given token. A saved account will not be used.
+Calibration: 160 circuits x 1000 shots, transpile check OK
+Test: 24 circuits x 2000 shots, transpile check OK (rz stays virtual)
+Queue on ibm_marrakesh: 23
+/home/opc/theta-aware/11_isolation.py:135: DeprecationWarning: The SamplerV2 class is deprecated as of qiskit-ibm-runtime 0.50.0 and will be removed no sooner than 3 months after the release date. `qiskit_ibm_runtime.executor_sampler.Sampler` provides a new Sampler implementation that runs all the pre- and post-processing in the client side. The top-level `qiskit_ibm_runtime.Sampler` import will be updated to point to the client-side sampler in an upcoming release, with the legacy Sampler being available until the deprecation is completed.
+  job = SamplerV2(backend).run(transpile(circs, backend, initial_layout=layout, optimization_level=0), shots=shots)
+JOB ID: db7td6er6oqs73889jeg
+Calibration QPU seconds: 45
+(10, 11): alpha=[-0.214, -0.156, -0.092, 0.18] beta=[-0.126, -0.04, 0.039, 0.316] delta=[0.243, 0.186, 0.125, -0.147]
+JOB ID: db7tldiraffc73fb95gg
+Test QPU seconds: 15
+
+=== (10, 11)   theta  total   raw    local  local+delta
+             2pi/24 1pi   0.452  0.020  0.015
+             2pi/24 2pi   0.043  0.890  0.892
+             3pi/24 1pi   0.358  0.508  0.533
+             3pi/24 2pi   0.101  0.019  0.011
+             4pi/24 1pi   0.753  0.828  0.946
+             4pi/24 2pi   0.398  0.538  0.956
+             8pi/24 1pi   0.118  0.025  0.031
+             8pi/24 2pi   0.303  0.754  0.768
+
+local: median relative gain +22.6% | mean abs gain +0.132 | Wilcoxon one-sided p=1.91e-01 | n=8
+
+local+delta: median relative gain +37.1% | mean abs gain +0.203 | Wilcoxon one-sided p=9.77e-02 | n=8
+Saved iso_db7tldiraffc73fb95gg.json

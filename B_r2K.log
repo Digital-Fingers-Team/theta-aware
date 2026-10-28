@@ -1,0 +1,134 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-14 19:22:41,968: Loading account with the given token. A saved account will not be used.
+Calibration: 280 circuits x 1000 shots, transpile check OK
+Test: 42 circuits x 2000 shots, transpile check OK (rz stays virtual)
+Queue on ibm_kingston: 36
+/home/opc/theta-aware/12_round2_kingston.py:135: DeprecationWarning: The SamplerV2 class is deprecated as of qiskit-ibm-runtime 0.50.0 and will be removed no sooner than 3 months after the release date. `qiskit_ibm_runtime.executor_sampler.Sampler` provides a new Sampler implementation that runs all the pre- and post-processing in the client side. The top-level `qiskit_ibm_runtime.Sampler` import will be updated to point to the client-side sampler in an upcoming release, with the legacy Sampler being available until the deprecation is completed.
+  job = SamplerV2(backend).run(transpile(circs, backend, initial_layout=layout, optimization_level=0), shots=shots)
+JOB ID: db7td80r1c5c738l9490
+Calibration QPU seconds: 76
+(59, 75): alpha=[0.006, 0.009, 0.012, 0.012, 0.009, 0.011, 0.016] beta=[0.004, 0.015, 0.005, -0.004, 0.021, 0.025, 0.021] delta=[-0.001, -0.004, -0.005, -0.007, -0.001, 0.004, -0.005]
+(108, 109): alpha=[0.001, 0.005, 0.007, 0.008, 0.005, -0.005, -0.001] beta=[0.014, 0.025, 0.026, 0.023, 0.049, 0.057, 0.053] delta=[0.002, 0.007, 0.005, 0.006, 0.01, 0.02, 0.023]
+(96, 103): alpha=[0.009, 0.009, 0.005, 0.011, 0.012, 0.014, 0.017] beta=[0.001, 0.003, -0.004, -0.01, 0.011, 0.01, -0.005] delta=[-0.001, -0.003, -0.005, -0.01, -0.005, -0.007, -0.012]
+(0, 1): alpha=[0.008, -0.766, -0.832, -1.548, -1.245, 0.017, -0.049] beta=[0.021, 0.042, -0.003, 0.009, -0.03, 0.041, -0.007] delta=[0.03, 0.16, -0.008, 0.125, -0.002, 0.262, 0.004]
+(16, 23): alpha=[-0.005, 0.007, 0.005, 0.007, 0.007, 0.009, 0.028] beta=[-0.005, 0.009, -0.001, -0.012, -0.001, 0.009, 0.048] delta=[0.001, -0.003, -0.005, -0.007, -0.0, 0.007, -0.0]
+(141, 142): alpha=[-0.001, 0.004, -0.004, -0.008, 0.005, 0.013, -0.006] beta=[0.001, -0.002, -0.004, -0.0, 0.009, 0.006, -0.002] delta=[-0.005, 0.005, 0.004, -0.003, -0.008, -0.003, 0.001]
+(151, 152): alpha=[-0.015, -0.01, -0.021, -0.024, -0.021, -0.024, -0.043] beta=[0.007, 0.01, 0.011, 0.01, 0.016, 0.016, 0.02] delta=[0.001, -0.001, -0.003, -0.008, -0.011, -0.009, -0.015]
+JOB ID: db7teq6il99s73forh20
+Test QPU seconds: 24
+
+=== (59, 75)   theta  total   raw    local  local+delta
+             1pi/24 1pi   0.935  0.949  0.951
+             1pi/24 2pi   0.875  0.918  0.925
+             2pi/24 1pi   0.939  0.955  0.961
+             2pi/24 2pi   0.892  0.951  0.960
+             3pi/24 1pi   0.964  0.968  0.962
+             3pi/24 2pi   0.957  0.959  0.965
+             4pi/24 1pi   0.954  0.954  0.961
+             4pi/24 2pi   0.956  0.961  0.960
+             6pi/24 1pi   0.952  0.959  0.958
+             6pi/24 2pi   0.950  0.971  0.957
+             8pi/24 1pi   0.960  0.951  0.952
+             8pi/24 2pi   0.957  0.960  0.967
+            12pi/24 1pi   0.952  0.959  0.958
+            12pi/24 2pi   0.962  0.964  0.966
+
+=== (108, 109)   theta  total   raw    local  local+delta
+             1pi/24 1pi   0.908  0.949  0.941
+             1pi/24 2pi   0.774  0.918  0.912
+             2pi/24 1pi   0.913  0.949  0.958
+             2pi/24 2pi   0.849  0.950  0.947
+             3pi/24 1pi   0.952  0.955  0.957
+             3pi/24 2pi   0.930  0.968  0.967
+             4pi/24 1pi   0.954  0.959  0.957
+             4pi/24 2pi   0.934  0.957  0.959
+             6pi/24 1pi   0.941  0.953  0.948
+             6pi/24 2pi   0.949  0.967  0.974
+             8pi/24 1pi   0.955  0.950  0.957
+             8pi/24 2pi   0.945  0.961  0.961
+            12pi/24 1pi   0.950  0.952  0.944
+            12pi/24 2pi   0.958  0.952  0.951
+
+=== (96, 103)   theta  total   raw    local  local+delta
+             1pi/24 1pi   0.936  0.934  0.944
+             1pi/24 2pi   0.916  0.944  0.949
+             2pi/24 1pi   0.940  0.949  0.948
+             2pi/24 2pi   0.943  0.946  0.950
+             3pi/24 1pi   0.938  0.948  0.952
+             3pi/24 2pi   0.949  0.954  0.952
+             4pi/24 1pi   0.954  0.953  0.948
+             4pi/24 2pi   0.956  0.954  0.967
+             6pi/24 1pi   0.939  0.941  0.951
+             6pi/24 2pi   0.964  0.964  0.957
+             8pi/24 1pi   0.944  0.944  0.965
+             8pi/24 2pi   0.960  0.968  0.973
+            12pi/24 1pi   0.947  0.952  0.957
+            12pi/24 2pi   0.958  0.961  0.963
+
+=== (0, 1)   theta  total   raw    local  local+delta
+             1pi/24 1pi   0.651  0.656  0.647
+             1pi/24 2pi   0.235  0.185  0.191
+             2pi/24 1pi   0.697  0.414  0.453
+             2pi/24 2pi   0.286  0.324  0.342
+             3pi/24 1pi   0.723  0.718  0.726
+             3pi/24 2pi   0.319  0.310  0.301
+             4pi/24 1pi   0.727  0.435  0.404
+             4pi/24 2pi   0.349  0.372  0.366
+             6pi/24 1pi   0.744  0.610  0.611
+             6pi/24 2pi   0.365  0.115  0.133
+             8pi/24 1pi   0.726  0.743  0.733
+             8pi/24 2pi   0.374  0.337  0.370
+            12pi/24 1pi   0.723  0.726  0.753
+            12pi/24 2pi   0.355  0.368  0.381
+
+=== (16, 23)   theta  total   raw    local  local+delta
+             1pi/24 1pi   0.934  0.944  0.936
+             1pi/24 2pi   0.919  0.930  0.933
+             2pi/24 1pi   0.952  0.950  0.956
+             2pi/24 2pi   0.926  0.950  0.958
+             3pi/24 1pi   0.947  0.937  0.952
+             3pi/24 2pi   0.946  0.954  0.946
+             4pi/24 1pi   0.946  0.944  0.947
+             4pi/24 2pi   0.957  0.961  0.959
+             6pi/24 1pi   0.944  0.955  0.955
+             6pi/24 2pi   0.955  0.962  0.949
+             8pi/24 1pi   0.958  0.962  0.956
+             8pi/24 2pi   0.957  0.964  0.959
+            12pi/24 1pi   0.957  0.953  0.952
+            12pi/24 2pi   0.952  0.963  0.954
+
+=== (141, 142)   theta  total   raw    local  local+delta
+             1pi/24 1pi   0.942  0.935  0.932
+             1pi/24 2pi   0.927  0.921  0.926
+             2pi/24 1pi   0.953  0.947  0.957
+             2pi/24 2pi   0.951  0.950  0.946
+             3pi/24 1pi   0.947  0.957  0.944
+             3pi/24 2pi   0.949  0.959  0.957
+             4pi/24 1pi   0.954  0.948  0.957
+             4pi/24 2pi   0.947  0.961  0.955
+             6pi/24 1pi   0.953  0.950  0.944
+             6pi/24 2pi   0.945  0.948  0.946
+             8pi/24 1pi   0.942  0.954  0.956
+             8pi/24 2pi   0.935  0.950  0.944
+            12pi/24 1pi   0.951  0.958  0.956
+            12pi/24 2pi   0.954  0.952  0.958
+
+=== (151, 152)   theta  total   raw    local  local+delta
+             1pi/24 1pi   0.904  0.933  0.951
+             1pi/24 2pi   0.793  0.923  0.933
+             2pi/24 1pi   0.945  0.949  0.953
+             2pi/24 2pi   0.940  0.951  0.946
+             3pi/24 1pi   0.945  0.948  0.953
+             3pi/24 2pi   0.924  0.962  0.948
+             4pi/24 1pi   0.947  0.956  0.951
+             4pi/24 2pi   0.917  0.951  0.955
+             6pi/24 1pi   0.953  0.942  0.940
+             6pi/24 2pi   0.946  0.955  0.958
+             8pi/24 1pi   0.945  0.948  0.946
+             8pi/24 2pi   0.946  0.954  0.949
+            12pi/24 1pi   0.960  0.956  0.955
+            12pi/24 2pi   0.945  0.949  0.954
+
+local: median relative gain +0.6% | mean abs gain +0.001 | Wilcoxon one-sided p=6.14e-06 | n=98
+
+local+delta: median relative gain +0.7% | mean abs gain +0.003 | Wilcoxon one-sided p=2.15e-06 | n=98
+Saved round2k_db7teq6il99s73forh20.json

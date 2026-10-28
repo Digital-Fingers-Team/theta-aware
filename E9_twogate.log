@@ -1,0 +1,10 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-14 19:51:02,714: Loading account with the given token. A saved account will not be used.
+Check OK: 12 circuits x 2000; quota remaining 91 s; queue 11
+/home/opc/theta-aware/15_twogate.py:62: DeprecationWarning: The SamplerV2 class is deprecated as of qiskit-ibm-runtime 0.50.0 and will be removed no sooner than 3 months after the release date. `qiskit_ibm_runtime.executor_sampler.Sampler` provides a new Sampler implementation that runs all the pre- and post-processing in the client side. The top-level `qiskit_ibm_runtime.Sampler` import will be updated to point to the client-side sampler in an upcoming release, with the legacy Sampler being available until the deprecation is completed.
+  job = SamplerV2(backend).run(isa, shots=SHOTS); print("JOB ID:", job.job_id(), flush=True)
+JOB ID: db7tqbmil99s73fos67g
+QPU s: 9
+2pi/24 K=12 ideal 11: raw 0.430 | local 0.015 | twogate 0.279
+2pi/24 K=24 ideal 00: raw 0.055 | local 0.802 | twogate 0.162
+3pi/24 K= 8 ideal 11: raw 0.334 | local 0.508 | twogate 0.529
+3pi/24 K=16 ideal 00: raw 0.121 | local 0.011 | twogate 0.065

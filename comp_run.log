@@ -1,0 +1,15 @@
+Corrected implementations (theta -> ops):
+  (10, 11) 1pi/24:t | 2pi/24:t | 3pi/24:t | 4pi/24:s(0.299) | 6pi/24:s(0.817) | 8pi/24:s(1.262) | 12pi/24:u
+  (2, 3) 1pi/24:t | 2pi/24:s(0.262) | 3pi/24:s(0.395) | 4pi/24:s(0.525) | 6pi/24:s(0.784) | 8pi/24:s(1.037) | 12pi/24:s(1.563)
+  (91, 98) 1pi/24:t | 2pi/24:s(0.259) | 3pi/24:s(0.391) | 4pi/24:s(0.529) | 6pi/24:s(0.799) | 8pi/24:s(1.058) | 12pi/24:u
+  (12, 13) 1pi/24:t | 2pi/24:s(0.260) | 3pi/24:s(0.391) | 4pi/24:s(0.521) | 6pi/24:s(0.775) | 8pi/24:s(1.029) | 12pi/24:s(1.555)
+  (21, 36) 1pi/24:s(0.139) | 2pi/24:s(0.249) | 3pi/24:s(0.391) | 4pi/24:s(0.535) | 6pi/24:s(0.787) | 8pi/24:s(1.033) | 12pi/24:s(1.568)
+  (32, 33) 1pi/24:t | 2pi/24:s(0.249) | 3pi/24:s(0.381) | 4pi/24:s(0.518) | 6pi/24:s(0.786) | 8pi/24:s(1.048) | 12pi/24:s(1.554)
+  (14, 15) 1pi/24:s(0.131) | 2pi/24:s(0.266) | 3pi/24:s(0.399) | 4pi/24:s(0.535) | 6pi/24:s(0.796) | 8pi/24:s(1.059) | 12pi/24:u
+qiskit_runtime_service._discover_account:WARNING:2026-10-14 18:44:34,117: Loading account with the given token. A saved account will not be used.
+Transpile check OK: 28 circuits x 2000 shots on ibm_marrakesh (queue 2)
+/home/opc/theta-aware/06_compensation.py:89: DeprecationWarning: The SamplerV2 class is deprecated as of qiskit-ibm-runtime 0.50.0 and will be removed no sooner than 3 months after the release date. `qiskit_ibm_runtime.executor_sampler.Sampler` provides a new Sampler implementation that runs all the pre- and post-processing in the client side. The top-level `qiskit_ibm_runtime.Sampler` import will be updated to point to the client-side sampler in an upcoming release, with the legacy Sampler being available until the deprecation is completed.
+  job = SamplerV2(backend).run(isa, shots=SHOTS)
+JOB ID: db7sr6mil99s73foqgjg
+QPU seconds billed: 0
+Saved comp_db7sr6mil99s73foqgjg.json

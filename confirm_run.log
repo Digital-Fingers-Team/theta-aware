@@ -1,0 +1,12 @@
+qiskit_runtime_service._discover_account:WARNING:2026-10-14 18:37:16,299: Loading account with the given token. A saved account will not be used.
+Fractional-gate backends: [('ibm_fez', True), ('ibm_kingston', True), ('ibm_marrakesh', True)]
+Backend: ibm_marrakesh | queue: 2
+Pairs: [(10, 11), (93, 94), (2, 3), (91, 98), (12, 13), (21, 36), (32, 33), (14, 15)] | reported rzz errors: [0.00149, 0.00153, 0.00134, 0.00143, 0.00158, 0.00162, 0.00166, 0.00169]
+Transpile check OK: 300 circuits, all rzz native, nothing merged.
+Plan: 300 circuits x 1000 shots = 300000 shots in ONE job.
+Sample ops: {'rz': 40, 'rzz': 32, 'sx': 16, 'measure': 16, 'barrier': 5}
+/home/opc/theta-aware/05_confirm.py:115: DeprecationWarning: The SamplerV2 class is deprecated as of qiskit-ibm-runtime 0.50.0 and will be removed no sooner than 3 months after the release date. `qiskit_ibm_runtime.executor_sampler.Sampler` provides a new Sampler implementation that runs all the pre- and post-processing in the client side. The top-level `qiskit_ibm_runtime.Sampler` import will be updated to point to the client-side sampler in an upcoming release, with the legacy Sampler being available until the deprecation is completed.
+  job = SamplerV2(backend).run(isa, shots=SHOTS)
+JOB ID: db7sns0r1c5c738l7vm0
+QPU seconds billed: 82
+Saved confirm_db7sns0r1c5c738l7vm0.json
