@@ -223,6 +223,15 @@ Cost model: ≈0.27 QPU s per circuit at 1000 shots. Small jobs are sometimes bi
 
 ---
 
+## Paper (7 Nov 2026, no QPU used)
+- `ThetaAware_Research_Paper.pdf`, built from `17_paper_analysis.py`, `18_h1_sensitivity.py` and `19_build_paper.py`, which recompute every number from the raw job files.
+- **H1 count depends on the bootstrap seed:** across 40 seeds, E2 gives 4-7 of 8 rejected (median 5), E7 6-7 (median 7), E8 4. Use a test that does not depend on the seed before pre-registering.
+- **H3 preview:** rho 0.74 (model) vs 0.53 (IBM) on 196 raw cases; difference CI [-0.07, +0.42] includes 0, and the advantage goes away without the two bad pairs.
+- **Projections (model outputs, not data):** H1 likely; H2 7-24% with our pair mix, under 1% with bad pairs avoided, so it depends on how common bad pairs are; H4 about 43% of the QPU time with two depths {1, 32}; full experiment about 18 QPU minutes.
+- **Design problem found:** mirrored evaluation circuits would cancel delta and one qubit's local phase, hiding the coherent error under study.
+
+---
+
 ## Scripts
 
 | File | Role |
