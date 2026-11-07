@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>θ-Aware</title>
+<meta name="description" content="θ-Aware: the angle-dependent error of IBM's fractional RZZ(θ) gate, and what a compiler could do with it. ISEF presentation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Math&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/" } }</script>
+</head>
+<body>
+<!--
+  HOW TO EDIT
+  Every slide is one <section class="slide"> below, in order. Change the text freely.
+  data-scene  = the 3D scene shown on the right (chip, bloch, mirror, landscape, compiler)
+  data-chart  = a 2D chart drawn from the measured data (coherent, correction, e10, h2, h4)
+  Numbers come from data/*.json (exported from the paper's analysis, no QPU used).
+  Keys: ← → or space to move, F fullscreen, N speaker notes, Home/End first/last.
+-->
+<div class="progress"><span id="progress-bar"></span></div>
+<nav class="dots" id="dots" aria-label="Slides"></nav>
+<div class="counter" id="counter"></div>
+
+<main class="deck" id="deck">
+
+<!-- 1. Title -->
+<section class="slide title-slide" data-scene="chip">
+  <div class="copy">
+    <p class="kicker">ISEF · Systems Software · Algorithms</p>
+    <h1>θ-Aware</h1>
+    <p class="lead">The angle-dependent error of IBM's fractional RZZ(θ) gate, and what a compiler could do with it.</p>
+    <p class="byline">[Student name] · Measured on <b>ibm_marrakesh</b> and <b>ibm_kingston</b> (Heron)</p>
+    <p class="hint">Press → to begin · drag the chip to rotate it</p>
+  </div>
+  <div class="stage"></div>
+  <aside class="notes">Introduce yourself. One sentence: IBM's processors have a gate that rotates by any angle θ, IBM tells us one error number for every angle, and I measured whether that is true.</aside>
+</section>
+
+<!-- 2. Problem -->
+<section class="slide" data-chart="problem">
+  <div class="copy">
+    <p class="kicker">The problem</p>
+    <h2>One number for every angle</h2>
+    <p>Heron processors can apply <span class="m">RZZ(θ)</span> directly, for any <span class="m">0 &lt; θ ≤ π/2</span>, instead of building it from two CZ gates.</p>
+    <p>IBM's documentation says the error it reports for this gate <q>is just a copy of the non-fractional gate's counterpart (which may not be the same)</q>, and Pauli twirling is not supported, so coherent errors are not averaged away.</p>
+    <p class="callout">A compiler that only reads the reported number cannot tell a good angle from a bad one.</p>
+    <p class="qs"><b>Three questions:</b> Does the error depend on θ? What is it made of? How much could a compiler gain by knowing it?</p>
+  </div>
+  <div class="stage chart"></div>
+  <aside class="notes">The dashed line is what IBM reports for pair (10, 11). The dots are what I measured on the same pair. Same gate, same day.</aside>
+</section>
+
+<!-- 3. Qubit + RZZ on the Bloch sphere -->
+<section class="slide" data-scene="bloch">
+  <div class="copy">
+    <p class="kicker">How the gate acts</p>
+    <h2>RZZ(θ) turns one qubit by ±θ</h2>
+    <p>Put the second qubit in <span class="m">|+⟩</span> (on the equator). If the first qubit is <span class="m">|0⟩</span>, RZZ(θ) turns it by <span class="m">+θ</span> around Z; if <span class="m">|1⟩</span>, by <span class="m">−θ</span>.</p>
+    <p>A real gate turns a little too far, <span class="m c-d">δ(θ)</span>, and adds its own single-qubit phase <span class="m c-b">β(θ)</span>. Both depend on the angle.</p>
+    <div class="controls" data-for="bloch">
+      <label>θ <input type="range" name="theta" min="0.13" max="1.571" step="0.001" value="0.393"><output name="theta-out"></output></label>
+      <label>Repeat N <input type="range" name="n" min="1" max="16" step="1" value="1"><output name="n-out"></output></label>
+      <div class="seg" role="group" aria-label="Control qubit">
+        <button data-k="ctrl" data-v="0" class="on">control |0⟩</button><button data-k="ctrl" data-v="1">control |1⟩</button>
+      </div>
+      <div class="seg" role="group" aria-label="Gate">
+        <button data-k="gate" data-v="ideal">ideal gate</button><button data-k="gate" data-v="typical">typical pair (14,15)</button><button data-k="gate" data-v="bad" class="on">worst pair (10,11)</button>
+      </div>
+    </div>
+    <dl class="readout" data-readout="bloch"></dl>
+    <p class="legend"><i class="sw ideal"></i>ideal <i class="sw actual"></i>measured gate</p>
+  </div>
+  <div class="stage"></div>
+  <aside class="notes">Drag the angle down to π/24. On (10, 11) the gate turns by about 0.41 rad when we ask for 0.13: it cannot rotate that little. Increase N: the error grows N times. That is the phase-amplification idea on the next slides.</aside>
+</section>
+
+<!-- 4. Gate model -->
+<section class="slide" data-chart="model">
+  <div class="copy">
+    <p class="kicker">Gate model</p>
+    <h2>Four numbers per angle, not one</h2>
+    <div class="equation">RZZ(θ <span class="c-d">+ δ</span>) · RZ<sub>a</sub>(<span class="c-a">α</span>) · RZ<sub>b</sub>(<span class="c-b">β</span>) · then error <span class="c-e">ε</span></div>
+    <ul class="defs">
+      <li><b class="c-e">ε(θ)</b> incoherent error: the random part. Measured with <b>mirror circuits</b>.</li>
+      <li><b class="c-d">δ(θ)</b> over-rotation: the gate turns too far or too little.</li>
+      <li><b class="c-a">α(θ)</b>, <b class="c-b">β(θ)</b> local Z phases on each qubit. Invisible to IBM's reported figure.</li>
+    </ul>
+    <p>δ, α and β are measured with <b>phase amplification</b>: repeat the gate N = 1, 2, 4, 8, 16 times so a small error grows until it can be read.</p>
+  </div>
+  <div class="stage chart"></div>
+  <aside class="notes">Everything coherent can be corrected for free with virtual Z gates. Only ε is a true loss.</aside>
+</section>
+
+<!-- 5. Mirror circuits -->
+<section class="slide" data-scene="mirror">
+  <div class="copy">
+    <p class="kicker">Measuring ε(θ)</p>
+    <h2>The mirror: go out, come back</h2>
+    <p>Apply <span class="m">d</span> layers of RZZ(θ), then <span class="m">d</span> inverse layers (<span class="m">X·RZZ(θ)·X</span>, since the hardware takes no negative angles). A perfect gate comes home exactly.</p>
+    <p>What does not come home is the random error. Survival falls as <span class="m">S(d) = A·p<sup>2d</sup></span> for d = 1, 4, 8, 16, 32, and <span class="m">ε = (15/16)(1 − p)</span>.</p>
+    <div class="controls" data-for="mirror">
+      <label>depth d <input type="range" name="d" min="1" max="32" step="1" value="8"><output name="d-out"></output></label>
+      <label>ε (exaggerated) <input type="range" name="eps" min="0" max="0.04" step="0.001" value="0.012"><output name="eps-out"></output></label>
+      <div class="seg" role="group" aria-label="Over-rotation"><button data-k="delta" data-v="0">δ = 0</button><button data-k="delta" data-v="1" class="on">δ = 0.15 rad</button></div>
+    </div>
+    <dl class="readout" data-readout="mirror"></dl>
+    <p class="callout small">Turn δ on: the path drifts away from the ideal one, but still comes home. The mirror is blind to over-rotation, which is why δ needs its own measurement.</p>
+  </div>
+  <div class="stage"></div>
+  <aside class="notes">In simulation I injected δ = 0.02 rad and the mirror did not see it. That is a feature: the mirror isolates ε. But it also means mirrored circuits hide coherent errors, so they must not be used alone to evaluate the compiler.</aside>
+</section>
+
+<!-- 6. Landscape -->
+<section class="slide" data-scene="landscape">
+  <div class="copy">
+    <p class="kicker">Result 1 · measured</p>
+    <h2>The error depends on the angle</h2>
+    <p>Each bar is one measured ε(θ). Each red line is IBM's single reported value for that pair. Hover a bar for its numbers.</p>
+    <div class="controls" data-for="landscape">
+      <div class="seg" role="group" aria-label="Sweep"><button data-k="sweep" data-v="E2" class="on">marrakesh</button><button data-k="sweep" data-v="E8">marrakesh, 1 h later</button><button data-k="sweep" data-v="E7">kingston</button></div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><b>16 / 24</b><span>pair-sweeps reject a constant error (median; 14–18 across bootstrap seeds; Holm α = 0.01)</span></div>
+      <div class="stat"><b>26×</b><span>max/min ε on pair (10, 11)</span></div>
+    </div>
+    <p class="tooltip-box" id="landscape-tip">Hover or tap a bar.</p>
+  </div>
+  <div class="stage"></div>
+  <aside class="notes">Mirror ε is mostly below IBM's number, as expected, because the mirror excludes coherent error. The point is not the level but the shape: it changes with θ.</aside>
+</section>
+
+<!-- 7. Coherent phases -->
+<section class="slide" data-chart="coherent">
+  <div class="copy">
+    <p class="kicker">Result 2 · measured</p>
+    <h2>A hidden phase is the bigger coherent error</h2>
+    <p>Correcting only δ made results <b>worse</b> (median −0.9%). Re-reading the data showed why: a large single-qubit phase that the δ measurement cancels by design.</p>
+    <p>On (10, 11) the local phases reach <span class="m">α −0.26…+0.18</span> and <span class="m">β −0.19…+0.28</span> rad per gate. Elsewhere about 0.06 rad or less.</p>
+    <p class="legend"><i class="sw bad"></i>pair (10, 11) <i class="sw grey"></i>other marrakesh pairs</p>
+  </div>
+  <div class="stage chart"></div>
+  <aside class="notes">I kept the negative result, because it led to the main finding. (10, 11) was included on purpose: the pilot flagged it, so it is not a typical pair.</aside>
+</section>
+
+<!-- 8. Correction -->
+<section class="slide" data-chart="correction">
+  <div class="copy">
+    <p class="kicker">Result 3 · measured</p>
+    <h2>Correcting it is free, and helps unevenly</h2>
+    <p>Virtual RZ(−α), RZ(−β) after each gate: no extra error, no extra time. Test: from <span class="m">|++⟩</span>, apply RZZ(θ) K times with Kθ = π or 2π, and read the ideal output.</p>
+    <div class="stat-row">
+      <div class="stat"><b>+1.0%</b><span>median gain, marrakesh, p = 5.7×10<sup>−8</sup> (98 cases)</span></div>
+      <div class="stat"><b>+0.6%</b><span>median gain, kingston, p = 6.1×10<sup>−6</sup> (98 cases)</span></div>
+    </div>
+    <p>Most of the gain sits on a few bad pairs. On (0, 1), whose calibration was erratic, the correction hurt. A real compiler needs a calibration-quality check.</p>
+  </div>
+  <div class="stage chart"></div>
+  <aside class="notes">Each dot is one test case. Above the diagonal, the correction helped. On (10, 11) several jump from 0.06–0.41 to 0.87–0.96, but three collapse to about 0.02: at π/12 and π/8 the gate cannot rotate that little.</aside>
+</section>
+
+<!-- 9. E10 -->
+<section class="slide" data-chart="e10">
+  <div class="copy">
+    <p class="kicker">Result 4 · measured</p>
+    <h2>Choosing the implementation can matter more</h2>
+    <p>On the worst pair at small angles, the standard decomposition with <b>two CZ gates</b> reached 0.86–0.89 success. The fractional gate reached 0.05–0.44.</p>
+    <p>IBM reports the same error for both.</p>
+    <p class="callout small">One pair, chosen because it is bad, at its worst angles. 2,000 shots each.</p>
+  </div>
+  <div class="stage chart"></div>
+  <aside class="notes">2-CZ uses twice as many two-qubit gates and still wins here. This is the strongest argument for a compiler that knows per-angle, per-pair behaviour.</aside>
+</section>
+
+<!-- 10. Compiler -->
+<section class="slide" data-scene="compiler">
+  <div class="copy">
+    <p class="kicker">The θ-aware compiler · projection</p>
+    <h2>Before and after the compiler</h2>
+    <p>Simulated 8-qubit lines built from the 14 calibrated pairs, with the measured δ, α, β and ε. The θ-aware rule corrects local phases (residual 0.01 rad) and uses <b>2-CZ</b> when the fractional gate is predicted to be worse.</p>
+    <div class="controls" data-for="compiler">
+      <div class="seg" role="group" aria-label="Compiler"><button data-k="mode" data-v="before" class="on">before</button><button data-k="mode" data-v="after">after θ-aware</button></div>
+      <div class="seg" role="group" aria-label="Circuit family"><button data-k="family" data-v="lr_qaoa" class="on">LR-QAOA</button><button data-k="family" data-v="ising">Trotter Ising</button><button data-k="family" data-v="random">Random RZZ</button></div>
+    </div>
+    <dl class="readout" data-readout="compiler"></dl>
+    <p class="legend"><i class="sw frac"></i>fractional RZZ <i class="sw badg"></i>on a bad pair <i class="sw cz"></i>2 × CZ <i class="sw fix"></i>virtual RZ (free)</p>
+    <p class="warn">Projection, not data. The compiler itself has not been built yet.</p>
+  </div>
+  <div class="stage"></div>
+  <aside class="notes">Nearly all of the projected gain comes from circuits that touch a bad pair. On circuits that avoid them the gain is about 0.4–0.6%. So H2's verdict depends on how common bad pairs are.</aside>
+</section>
+
+<!-- 11. H2 by depth -->
+<section class="slide" data-chart="h2">
+  <div class="copy">
+    <p class="kicker">Projection</p>
+    <h2>Gain grows with depth, and with bad pairs</h2>
+    <p>Median relative gain of the simulated θ-aware rule over fractional gates with no correction, by number of layers. The dashed line is the plan's 10% target (H2).</p>
+    <p>With bad pairs avoided, the gain falls below 1%. A layout pass that simply avoids bad pairs would capture most of it, but finding them still needs per-angle data.</p>
+  </div>
+  <div class="stage chart"></div>
+  <aside class="notes">Metric: state fidelity times gate survival, not the hardware's success probability. 64% of simulated circuits touch a bad pair, which over-represents them.</aside>
+</section>
+
+<!-- 12. Hypotheses -->
+<section class="slide">
+  <div class="copy wide">
+    <p class="kicker">Where the hypotheses stand</p>
+    <h2>Expected results of the full experiment</h2>
+    <div class="hyp-grid">
+      <article class="hyp likely"><h3>H1 · likely</h3><p>Constant error rejected for ≥ 50% of pairs.</p><p class="num">Projected 63% with 60 pairs (95% range 43–75%); 91% of resamples reach 50%.</p></article>
+      <article class="hyp open"><h3>H2 · open</h3><p>θ-aware compilation improves median success by ≥ 10%.</p><p class="num">7–24% with our pair mix; under 1% when bad pairs are avoided.</p></article>
+      <article class="hyp unsure"><h3>H3 · uncertain</h3><p>The θ-aware model ranks circuits better than IBM's errors.</p><p class="num">ρ 0.74 vs 0.53, difference CI [−0.07, +0.42] includes 0.</p></article>
+      <article class="hyp likely"><h3>H4 · plausible</h3><p>Same CI width on ε with ≤ 50% of the QPU time.</p><p class="num">Two depths {1, 32} at 1,106 shots: 43% of the time.</p></article>
+    </div>
+    <p class="warn">Exploratory: one day, two devices, 8 pairs each, 551 QPU seconds. Several design choices were made after seeing the data.</p>
+  </div>
+  <aside class="notes">Be honest with the judges: nothing here is confirmatory. The next step is to pre-register the corrected design.</aside>
+</section>
+
+<!-- 13. Next -->
+<section class="slide" data-scene="chip" data-variant="end">
+  <div class="copy">
+    <p class="kicker">Next</p>
+    <h2>What comes next</h2>
+    <ol class="next">
+      <li><b>Pre-register</b> the corrected design: pairs chosen without the pilot, a fixed rule for bad pairs, a likelihood test for H1.</li>
+      <li><b>Multi-day sweep</b>: ≥ 30 pairs per device, 3 days, about 18 QPU minutes.</li>
+      <li><b>Build the compiler</b> as Qiskit passes: phase correction, 2-CZ choice, bad-pair-aware layout.</li>
+      <li><b>Evaluate</b> on ≥ 40 circuits with classically computable outputs, not only mirrors.</li>
+    </ol>
+    <p class="lead small">Main message so far: a single reported error misdescribes fractional RZZ(θ) gates, and a few pairs that look normal on paper can be far worse than the standard decomposition.</p>
+    <p class="byline">Thank you · Code and data: github.com/Digital-Fingers-Team/theta-aware (private)</p>
+  </div>
+  <div class="stage"></div>
+  <aside class="notes">AI assistance must be disclosed as the fair's rules require: Claude helped write code, simulations and text. You must be able to explain every part.</aside>
+</section>
+
+</main>
+
+<div class="notes-panel" id="notes-panel" hidden></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
