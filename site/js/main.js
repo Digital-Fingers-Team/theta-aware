@@ -10,7 +10,8 @@ const bar = document.getElementById('progress-bar');
 const notesPanel = document.getElementById('notes-panel');
 const mobile = () => window.matchMedia('(max-width: 900px)').matches;
 
-const [D, R] = await Promise.all(['data/site_data.json', 'data/paper_results.json'].map((u) => fetch(u).then((r) => r.json())));
+const [D, R, K] = await Promise.all(['data/site_data.json', 'data/paper_results.json', 'data/compiler_summary.json'].map((u) => fetch(u).then((r) => r.json())));
+R.compiler = K;
 
 // Charts: drawn once, they are SVG and scale by themselves.
 for (const s of slides) if (s.dataset.chart) drawChart(s.dataset.chart, s.querySelector('.stage'), D, R);

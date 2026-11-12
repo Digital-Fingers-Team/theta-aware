@@ -1,0 +1,92 @@
+drift sigma from E2 -> E8 = 0.0017 rad
+
+== all  n=120
+   frac             fidelity 0.8238  errors 0.1762  2q gates 15.6
+   cz               fidelity 0.9644  errors 0.0356  2q gates 31.2
+   theta            fidelity 0.9873  errors 0.0127  2q gates 17.0
+   frac+ibm_layout  fidelity 0.8139  errors 0.1861  2q gates 15.6
+   cz+ibm_layout    fidelity 0.9663  errors 0.0337  2q gates 31.2
+   theta+layout     fidelity 0.9932  errors 0.0068  2q gates 15.6
+   theta vs frac: errors -92.8% (better in 100%, worse in 0%)
+   theta vs cz:   errors -64.3% with 45% fewer 2q gates
+   with layout:   errors -96.4% vs Qiskit-frac, -79.8% vs Qiskit-cz
+
+== lr_qaoa  n=40
+   frac             fidelity 0.8295  errors 0.1705  2q gates 15.1
+   cz               fidelity 0.9662  errors 0.0338  2q gates 30.2
+   theta            fidelity 0.9874  errors 0.0126  2q gates 16.7
+   frac+ibm_layout  fidelity 0.8636  errors 0.1364  2q gates 15.1
+   cz+ibm_layout    fidelity 0.9680  errors 0.0320  2q gates 30.2
+   theta+layout     fidelity 0.9929  errors 0.0071  2q gates 15.2
+   theta vs frac: errors -92.6% (better in 100%, worse in 0%)
+   theta vs cz:   errors -62.6% with 45% fewer 2q gates
+   with layout:   errors -94.8% vs Qiskit-frac, -77.8% vs Qiskit-cz
+
+== ising  n=40
+   frac             fidelity 0.7862  errors 0.2138  2q gates 16.4
+   cz               fidelity 0.9630  errors 0.0370  2q gates 32.8
+   theta            fidelity 0.9864  errors 0.0136  2q gates 17.8
+   frac+ibm_layout  fidelity 0.7148  errors 0.2852  2q gates 16.4
+   cz+ibm_layout    fidelity 0.9653  errors 0.0347  2q gates 32.8
+   theta+layout     fidelity 0.9933  errors 0.0067  2q gates 16.4
+   theta vs frac: errors -93.7% (better in 100%, worse in 0%)
+   theta vs cz:   errors -63.3% with 46% fewer 2q gates
+   with layout:   errors -97.6% vs Qiskit-frac, -80.6% vs Qiskit-cz
+
+== random  n=40
+   frac             fidelity 0.8557  errors 0.1443  2q gates 15.2
+   cz               fidelity 0.9640  errors 0.0360  2q gates 30.5
+   theta            fidelity 0.9881  errors 0.0119  2q gates 16.6
+   frac+ibm_layout  fidelity 0.8632  errors 0.1368  2q gates 15.2
+   cz+ibm_layout    fidelity 0.9656  errors 0.0344  2q gates 30.5
+   theta+layout     fidelity 0.9935  errors 0.0065  2q gates 15.2
+   theta vs frac: errors -91.8% (better in 100%, worse in 0%)
+   theta vs cz:   errors -67.0% with 46% fewer 2q gates
+   with layout:   errors -95.2% vs Qiskit-frac, -81.0% vs Qiskit-cz
+
+== no_bad_edge  n=62
+   frac             fidelity 0.9858  errors 0.0142  2q gates 15.7
+   cz               fidelity 0.9647  errors 0.0353  2q gates 31.5
+   theta            fidelity 0.9898  errors 0.0102  2q gates 15.8
+   frac+ibm_layout  fidelity 0.7885  errors 0.2115  2q gates 15.7
+   cz+ibm_layout    fidelity 0.9666  errors 0.0334  2q gates 31.5
+   theta+layout     fidelity 0.9934  errors 0.0066  2q gates 15.7
+   theta vs frac: errors -28.3% (better in 100%, worse in 0%)
+   theta vs cz:   errors -71.2% with 50% fewer 2q gates
+   with layout:   errors -96.9% vs Qiskit-frac, -80.4% vs Qiskit-cz
+
+== with_bad_edge  n=58
+   frac             fidelity 0.6506  errors 0.3494  2q gates 15.4
+   cz               fidelity 0.9641  errors 0.0359  2q gates 30.9
+   theta            fidelity 0.9846  errors 0.0154  2q gates 18.3
+   frac+ibm_layout  fidelity 0.8410  errors 0.1590  2q gates 15.4
+   cz+ibm_layout    fidelity 0.9660  errors 0.0340  2q gates 30.9
+   theta+layout     fidelity 0.9930  errors 0.0070  2q gates 15.4
+   theta vs frac: errors -95.6% (better in 100%, worse in 0%)
+   theta vs cz:   errors -57.1% with 41% fewer 2q gates
+   with layout:   errors -95.6% vs Qiskit-frac, -79.3% vs Qiskit-cz
+
+== drift_x6 (sigma=0.0103 rad)  n=60
+   frac             fidelity 0.7960  errors 0.2040  2q gates 16.1
+   cz               fidelity 0.9632  errors 0.0368  2q gates 32.2
+   theta            fidelity 0.9853  errors 0.0147  2q gates 17.6
+   frac+ibm_layout  fidelity 0.7919  errors 0.2081  2q gates 16.1
+   cz+ibm_layout    fidelity 0.9652  errors 0.0348  2q gates 32.2
+   theta+layout     fidelity 0.9908  errors 0.0092  2q gates 16.1
+   theta vs frac: errors -92.8% (better in 100%, worse in 0%)
+   theta vs cz:   errors -60.1% with 45% fewer 2q gates
+   with layout:   errors -95.6% vs Qiskit-frac, -73.7% vs Qiskit-cz
+
+== drift_x18 (sigma=0.0308 rad)  n=60
+   frac             fidelity 0.7820  errors 0.2180  2q gates 16.1
+   cz               fidelity 0.9632  errors 0.0368  2q gates 32.2
+   theta            fidelity 0.9715  errors 0.0285  2q gates 17.6
+   frac+ibm_layout  fidelity 0.7776  errors 0.2224  2q gates 16.1
+   cz+ibm_layout    fidelity 0.9652  errors 0.0348  2q gates 32.2
+   theta+layout     fidelity 0.9748  errors 0.0252  2q gates 16.1
+   theta vs frac: errors -86.9% (better in 92%, worse in 3%)
+   theta vs cz:   errors -22.4% with 45% fewer 2q gates
+   with layout:   errors -88.7% vs Qiskit-frac, -27.8% vs Qiskit-cz
+
+median compile time 429 ms; total 1500 s. Saved compiler_benchmark.json
+BENCH_DONE

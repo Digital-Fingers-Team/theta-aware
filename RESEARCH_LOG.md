@@ -232,6 +232,19 @@ Cost model: ≈0.27 QPU s per circuit at 1000 shots. Small jobs are sometimes bi
 
 ---
 
+## Compiler (12 Nov 2026, no QPU used)
+- **Built:** package `thetaaware/` (calibration.py: measured per-pair, per-angle model; compiler.py: the pass; device.py: noisy simulator for tests and benchmark). For every RZZ(θ) it folds θ into [0, π/2] with exact identities, then picks `frac` | `frac+rz` (virtual RZ(−α), RZ(−β)) | `frac+rz+pre` (also pre-distorted angle) | `cz` (CX·RZ·CX from two CZ) by predicted error: ε(θ) + m·coh(residual) vs 2 × IBM-reported error (m = repetitions of that pair and angle; coherent errors add in amplitude). Ties go to fewer two-qubit gates. `score_layout` ranks placements. Uncalibrated pairs stay plain fractional.
+- **Tests:** `python -m pytest tests`: 254 passed, 0 failed (exact equivalence for 50 angles, all options, both qubit orders; corrections cancel the measured model; whole random circuits; hardware angle range; simulator = paper's predict() to 1e-6).
+- **κ** (surviving share of a corrected coherent error) fitted on E4 only: 0.00 (edge of range). Sensitivity κ = 0…1: E10 choices unchanged (2-CZ in all 4), E6 mean 0.880–0.884, E4 0.853–0.888.
+- **Replay (`21_compiler_replay.py`)**, the compiler on the exact circuits of past jobs with only earlier calibrations, scored by measured outcomes:
+  - E10 (held out, (10,11)): Qiskit-fractional 0.233 → θ-Aware 0.880 (= best measured), 2-CZ chosen 4/4, 6.4× fewer errors.
+  - E6 (held out, kingston, 98): 0.879 → 0.880 (best possible 0.894); best within 2 SE in 91/98; better than raw 17, worse 6. No measurable gain on healthy pairs.
+  - E4 (κ fitted, 98): 0.842 → 0.888, 29% fewer errors.
+- **Simulation (`22_compiler_benchmark.py`, projection):** 120 circuits (LR-QAOA, Ising, random; 6-qubit lines; edges = measured pairs; device = calibration + measured-size drift σ = 0.0017 rad). Metric: state fidelity before measurement. A first run used Hellinger fidelity of output distributions and gave unrealistically tiny errors (spread-out outputs hide depolarising noise); it was discarded and replaced by state fidelity. Errors (1−F): Qiskit-frac 0.1762, Qiskit-CZ 0.0356, θ-Aware 0.0127, θ-Aware+layout 0.0068. θ-Aware vs frac −93%; vs CZ −64% with 45% fewer two-qubit gates; never worse than frac at measured drift. No-bad-pair circuits: −28% vs frac (not confirmed by E6 replay). At 18× drift the edge over CZ shrinks to about 22%.
+- **Paper** rebuilt (12 pages, new Section 4, Tables 6–7, Figures 7–8; `23_compiler_figures.py` writes compiler_summary.json). **Site** updated: slide 10 text, new slides 11 (replay) and 12 (benchmark), H2 card, next steps.
+- **Fair demo:** `24_demo.py` (offline: per-pair choices, error score, simulated fidelity; `--hardware` = dry run that logs in, builds and checks the jobs; `--submit` runs them; ask before any QPU second). On 12 Nov the stored key failed login ("Unable to retrieve instances"), so the hardware path is tested only up to login.
+- **Not done:** hardware run of the compiler (IBM account 1 blocked since 7 Nov; waiting for a key); dynamic programming across gates; crosstalk in the model.
+
 ## Scripts
 
 | File | Role |
@@ -245,10 +258,14 @@ Cost model: ≈0.27 QPU s per circuit at 1000 shots. Small jobs are sometimes bi
 | `08_diagnose_sign.py`, `09_local_phase.py` | E3 diagnosis (no QPU) |
 | `10_round2.py` | E4 (`--sim` for simulation validation) |
 | `11_isolation.py` … `14_sweep_marrakesh_repeat.py` | E5–E8 |
+| `thetaaware/`, `tests/` | the compiler and its tests (`python -m pytest tests`) |
+| `21_compiler_replay.py` | replay of the compiler on past jobs (E4/E6/E10), fits κ on E4 |
+| `22_compiler_benchmark.py` | simulation benchmark against two Qiskit baselines |
+| `23_compiler_figures.py` | Figures 7–8 and compiler_summary.json |
 
 ## Open questions / next steps
 1. Is the (10,11) failure caused by crosstalk (E5)?
 2. Does the local-phase effect exist on a second device (E6, E7)?
 3. How stable are ε(θ), δ(θ), α(θ), β(θ) over hours and days (E8, then a multi-day sweep)?
 4. **Pre-register** H1–H4, the analysis and a bad-pair exclusion rule (e.g. δ CI width > 0.5 rad) before the confirmatory sweep.
-5. Compiler: add a per-gate virtual-RZ correction pass, plus pair avoidance and scheduling rules.
+5. Compiler: built 12 Nov (see Compiler section). Next: run it against Qiskit on hardware (dry run first, ask before any QPU second); add cross-gate optimisation and crosstalk.

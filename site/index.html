@@ -33,7 +33,7 @@
     <p class="kicker">ISEF · Systems Software · Algorithms</p>
     <h1>θ-Aware</h1>
     <p class="lead">The angle-dependent error of IBM's fractional RZZ(θ) gate, and what a compiler could do with it.</p>
-    <p class="byline">[Student name] · Measured on <b>ibm_marrakesh</b> and <b>ibm_kingston</b> (Heron)</p>
+    <p class="byline">Elbaraa Saad and Eyad Abdelraoof · Measured on <b>ibm_marrakesh</b> and <b>ibm_kingston</b> (Heron)</p>
     <p class="hint">Press → to begin · drag the chip to rotate it</p>
   </div>
   <div class="stage"></div>
@@ -178,19 +178,50 @@
 <!-- 10. Compiler -->
 <section class="slide" data-scene="compiler">
   <div class="copy">
-    <p class="kicker">The θ-aware compiler · projection</p>
-    <h2>Before and after the compiler</h2>
-    <p>Simulated 8-qubit lines built from the 14 calibrated pairs, with the measured δ, α, β and ε. The θ-aware rule corrects local phases (residual 0.01 rad) and uses <b>2-CZ</b> when the fractional gate is predicted to be worse.</p>
+    <p class="kicker">The θ-Aware compiler · built</p>
+    <h2>One decision per gate</h2>
+    <p>For every RZZ(θ), θ-Aware picks the cheapest of: the fractional gate, the fractional gate + <b>free virtual RZ</b> corrections (optionally with a pre-distorted angle), or <b>2 × CZ</b>, using the measured error for that pair at that angle. It can also choose which pairs to use.</p>
     <div class="controls" data-for="compiler">
       <div class="seg" role="group" aria-label="Compiler"><button data-k="mode" data-v="before" class="on">before</button><button data-k="mode" data-v="after">after θ-aware</button></div>
       <div class="seg" role="group" aria-label="Circuit family"><button data-k="family" data-v="lr_qaoa" class="on">LR-QAOA</button><button data-k="family" data-v="ising">Trotter Ising</button><button data-k="family" data-v="random">Random RZZ</button></div>
     </div>
     <dl class="readout" data-readout="compiler"></dl>
     <p class="legend"><i class="sw frac"></i>fractional RZZ <i class="sw badg"></i>on a bad pair <i class="sw cz"></i>2 × CZ <i class="sw fix"></i>virtual RZ (free)</p>
-    <p class="warn">Projection, not data. The compiler itself has not been built yet.</p>
+    <p class="warn">The 3D scene replays the earlier simulated rule (8-qubit lines); the next two slides show the built compiler.</p>
   </div>
   <div class="stage"></div>
   <aside class="notes">Nearly all of the projected gain comes from circuits that touch a bad pair. On circuits that avoid them the gain is about 0.4–0.6%. So H2's verdict depends on how common bad pairs are.</aside>
+</section>
+
+
+<!-- 10b. Compiler replay -->
+<section class="slide" data-chart="replay">
+  <div class="copy">
+    <p class="kicker">Result 5 · measured outcomes, replayed</p>
+    <h2>Tested on real past jobs</h2>
+    <p>We ran the compiler on the exact circuits of earlier hardware jobs, gave it only the calibrations that existed <b>before</b> each job, and looked up how its choice actually did on the QPU.</p>
+    <p>On the bad pair it chose 2-CZ every time: success <b>0.23 → 0.88</b>, 6.4× fewer errors. It chose the best measured option in <b>95 of 102</b> held-out cases.</p>
+    <p class="callout small">Honest limit: on kingston's healthy pairs it changed nothing measurable (0.879 vs 0.880). E10 is 4 cases on one pair.</p>
+  </div>
+  <div class="stage chart"></div>
+  <aside class="notes">E4 was used to fit the one parameter κ; E6 and E10 are held out. Re-running with κ from 0 to 1 changed no E10 decision. "Best" means within two standard errors (2,000 shots).</aside>
+</section>
+
+<!-- 10c. Compiler benchmark -->
+<section class="slide" data-chart="bench">
+  <div class="copy">
+    <p class="kicker">Projection · simulation</p>
+    <h2>Fewer errors <em>and</em> fewer gates</h2>
+    <p>120 algorithm circuits on 6 qubits, with the measured gate parameters and measured-size drift.</p>
+    <ul class="tight">
+      <li><b>93% fewer errors</b> than Qiskit with fractional gates (worse on 0% of circuits).</li>
+      <li><b>64% fewer errors</b> than Qiskit without them, using <b>45% fewer two-qubit gates</b>.</li>
+      <li>With layout choice: <b>80% fewer errors</b> than 2-CZ at half the gates.</li>
+    </ul>
+    <p class="warn">Projection, not data. At 18× the measured drift the edge over 2-CZ shrinks; day-scale drift is not measured yet.</p>
+  </div>
+  <div class="stage chart"></div>
+  <aside class="notes">Metric: state fidelity before measurement, so every error counts. Single-qubit gates and readout are ideal in the simulation; crosstalk and leakage are not modelled. On circuits without a bad pair the gain over fractional gates is smaller and was not confirmed by the kingston replay.</aside>
 </section>
 
 <!-- 11. H2 by depth -->
@@ -212,7 +243,7 @@
     <h2>Expected results of the full experiment</h2>
     <div class="hyp-grid">
       <article class="hyp likely"><h3>H1 · likely</h3><p>Constant error rejected for ≥ 50% of pairs.</p><p class="num">Projected 63% with 60 pairs (95% range 43–75%); 91% of resamples reach 50%.</p></article>
-      <article class="hyp open"><h3>H2 · open</h3><p>θ-aware compilation improves median success by ≥ 10%.</p><p class="num">7–24% with our pair mix; under 1% when bad pairs are avoided.</p></article>
+      <article class="hyp open"><h3>H2 · promising, open</h3><p>θ-aware compilation improves median success by ≥ 10%.</p><p class="num">Built and tested: 6.4× fewer errors on the bad pair (replay); no measurable gain on healthy pairs. Needs hardware.</p></article>
       <article class="hyp unsure"><h3>H3 · uncertain</h3><p>The θ-aware model ranks circuits better than IBM's errors.</p><p class="num">ρ 0.74 vs 0.53, difference CI [−0.07, +0.42] includes 0.</p></article>
       <article class="hyp likely"><h3>H4 · plausible</h3><p>Same CI width on ε with ≤ 50% of the QPU time.</p><p class="num">Two depths {1, 32} at 1,106 shots: 43% of the time.</p></article>
     </div>
@@ -229,7 +260,7 @@
     <ol class="next">
       <li><b>Pre-register</b> the corrected design: pairs chosen without the pilot, a fixed rule for bad pairs, a likelihood test for H1.</li>
       <li><b>Multi-day sweep</b>: ≥ 30 pairs per device, 3 days, about 18 QPU minutes.</li>
-      <li><b>Build the compiler</b> as Qiskit passes: phase correction, 2-CZ choice, bad-pair-aware layout.</li>
+      <li><b>Run the compiler on hardware</b> against Qiskit (it is built: phase correction, 2-CZ choice, bad-pair-aware layout, dry run first).</li>
       <li><b>Evaluate</b> on ≥ 40 circuits with classically computable outputs, not only mirrors.</li>
     </ol>
     <p class="lead small">Main message so far: a single reported error misdescribes fractional RZZ(θ) gates, and a few pairs that look normal on paper can be far worse than the standard decomposition.</p>

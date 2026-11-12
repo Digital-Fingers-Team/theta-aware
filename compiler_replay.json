@@ -1,0 +1,2690 @@
+{
+ "kappa": 0.0,
+ "E6": {
+  "summary": {
+   "n": 98,
+   "in_sample": false,
+   "allowed": [
+    "raw",
+    "local",
+    "local+delta"
+   ],
+   "qiskit_fractional(raw)": 0.8788826530612245,
+   "always_local": 0.8798010204081633,
+   "always_local+delta": 0.8815255102040817,
+   "theta_aware": 0.8804285714285713,
+   "oracle": 0.8944591836734693,
+   "picked_best_or_within_noise": 91,
+   "improved_vs_raw": 17,
+   "worse_vs_raw": 6,
+   "errors_raw": 0.12111734693877552,
+   "errors_theta": 0.1195714285714286,
+   "choices": {
+    "raw": 0,
+    "local": 28,
+    "local+delta": 70
+   },
+   "two_qubit_gates_per_rzz": 1.0
+  },
+  "rows": [
+   {
+    "pair": "(59, 75)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.951,
+    "best": 0.951,
+    "measured": {
+     "raw": 0.9355,
+     "local": 0.9485,
+     "local+delta": 0.951
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz+pre",
+    "chosen": 0.925,
+    "best": 0.925,
+    "measured": {
+     "raw": 0.875,
+     "local": 0.918,
+     "local+delta": 0.925
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9605,
+    "best": 0.9605,
+    "measured": {
+     "raw": 0.9385,
+     "local": 0.9545,
+     "local+delta": 0.9605
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9595,
+    "best": 0.9595,
+    "measured": {
+     "raw": 0.892,
+     "local": 0.9505,
+     "local+delta": 0.9595
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.962,
+    "best": 0.968,
+    "measured": {
+     "raw": 0.9635,
+     "local": 0.968,
+     "local+delta": 0.962
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9645,
+    "best": 0.9645,
+    "measured": {
+     "raw": 0.9565,
+     "local": 0.959,
+     "local+delta": 0.9645
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.961,
+    "best": 0.961,
+    "measured": {
+     "raw": 0.954,
+     "local": 0.9535,
+     "local+delta": 0.961
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9595,
+    "best": 0.961,
+    "measured": {
+     "raw": 0.9555,
+     "local": 0.961,
+     "local+delta": 0.9595
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.958,
+    "best": 0.9585,
+    "measured": {
+     "raw": 0.952,
+     "local": 0.9585,
+     "local+delta": 0.958
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9565,
+    "best": 0.9705,
+    "measured": {
+     "raw": 0.95,
+     "local": 0.9705,
+     "local+delta": 0.9565
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.952,
+    "best": 0.96,
+    "measured": {
+     "raw": 0.96,
+     "local": 0.9505,
+     "local+delta": 0.952
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.967,
+    "best": 0.967,
+    "measured": {
+     "raw": 0.9565,
+     "local": 0.9595,
+     "local+delta": 0.967
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz",
+    "chosen": 0.9585,
+    "best": 0.9585,
+    "measured": {
+     "raw": 0.9515,
+     "local": 0.9585,
+     "local+delta": 0.958
+    }
+   },
+   {
+    "pair": "(59, 75)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.964,
+    "best": 0.966,
+    "measured": {
+     "raw": 0.9615,
+     "local": 0.964,
+     "local+delta": 0.966
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.9485,
+    "best": 0.9485,
+    "measured": {
+     "raw": 0.9085,
+     "local": 0.9485,
+     "local+delta": 0.941
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz",
+    "chosen": 0.9185,
+    "best": 0.9185,
+    "measured": {
+     "raw": 0.774,
+     "local": 0.9185,
+     "local+delta": 0.9125
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.958,
+    "best": 0.958,
+    "measured": {
+     "raw": 0.9135,
+     "local": 0.9485,
+     "local+delta": 0.958
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9465,
+    "best": 0.9495,
+    "measured": {
+     "raw": 0.8485,
+     "local": 0.9495,
+     "local+delta": 0.9465
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9565,
+    "best": 0.9565,
+    "measured": {
+     "raw": 0.952,
+     "local": 0.955,
+     "local+delta": 0.9565
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9665,
+    "best": 0.9675,
+    "measured": {
+     "raw": 0.93,
+     "local": 0.9675,
+     "local+delta": 0.9665
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.957,
+    "best": 0.959,
+    "measured": {
+     "raw": 0.9535,
+     "local": 0.959,
+     "local+delta": 0.957
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9585,
+    "best": 0.9585,
+    "measured": {
+     "raw": 0.934,
+     "local": 0.957,
+     "local+delta": 0.9585
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9475,
+    "best": 0.9525,
+    "measured": {
+     "raw": 0.9405,
+     "local": 0.9525,
+     "local+delta": 0.9475
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.974,
+    "best": 0.974,
+    "measured": {
+     "raw": 0.9485,
+     "local": 0.9665,
+     "local+delta": 0.974
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.957,
+    "best": 0.957,
+    "measured": {
+     "raw": 0.9545,
+     "local": 0.95,
+     "local+delta": 0.957
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.961,
+    "best": 0.961,
+    "measured": {
+     "raw": 0.9445,
+     "local": 0.9605,
+     "local+delta": 0.961
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9435,
+    "best": 0.9515,
+    "measured": {
+     "raw": 0.95,
+     "local": 0.9515,
+     "local+delta": 0.9435
+    }
+   },
+   {
+    "pair": "(108, 109)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9505,
+    "best": 0.958,
+    "measured": {
+     "raw": 0.958,
+     "local": 0.952,
+     "local+delta": 0.9505
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.944,
+    "best": 0.944,
+    "measured": {
+     "raw": 0.9365,
+     "local": 0.9345,
+     "local+delta": 0.944
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9485,
+    "best": 0.9485,
+    "measured": {
+     "raw": 0.916,
+     "local": 0.9435,
+     "local+delta": 0.9485
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.948,
+    "best": 0.9485,
+    "measured": {
+     "raw": 0.94,
+     "local": 0.9485,
+     "local+delta": 0.948
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9495,
+    "best": 0.9495,
+    "measured": {
+     "raw": 0.943,
+     "local": 0.946,
+     "local+delta": 0.9495
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9515,
+    "best": 0.9515,
+    "measured": {
+     "raw": 0.9375,
+     "local": 0.948,
+     "local+delta": 0.9515
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz+pre",
+    "chosen": 0.952,
+    "best": 0.954,
+    "measured": {
+     "raw": 0.949,
+     "local": 0.954,
+     "local+delta": 0.952
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9475,
+    "best": 0.954,
+    "measured": {
+     "raw": 0.954,
+     "local": 0.953,
+     "local+delta": 0.9475
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.967,
+    "best": 0.967,
+    "measured": {
+     "raw": 0.956,
+     "local": 0.9535,
+     "local+delta": 0.967
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9505,
+    "best": 0.9505,
+    "measured": {
+     "raw": 0.939,
+     "local": 0.9405,
+     "local+delta": 0.9505
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.957,
+    "best": 0.964,
+    "measured": {
+     "raw": 0.9635,
+     "local": 0.964,
+     "local+delta": 0.957
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.965,
+    "best": 0.965,
+    "measured": {
+     "raw": 0.9435,
+     "local": 0.9435,
+     "local+delta": 0.965
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.973,
+    "best": 0.973,
+    "measured": {
+     "raw": 0.9595,
+     "local": 0.968,
+     "local+delta": 0.973
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz",
+    "chosen": 0.952,
+    "best": 0.957,
+    "measured": {
+     "raw": 0.947,
+     "local": 0.952,
+     "local+delta": 0.957
+    }
+   },
+   {
+    "pair": "(96, 103)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.961,
+    "best": 0.963,
+    "measured": {
+     "raw": 0.958,
+     "local": 0.961,
+     "local+delta": 0.963
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.656,
+    "best": 0.656,
+    "measured": {
+     "raw": 0.6515,
+     "local": 0.656,
+     "local+delta": 0.6475
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz",
+    "chosen": 0.185,
+    "best": 0.2355,
+    "measured": {
+     "raw": 0.2355,
+     "local": 0.185,
+     "local+delta": 0.1905
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz",
+    "chosen": 0.4145,
+    "best": 0.6965,
+    "measured": {
+     "raw": 0.6965,
+     "local": 0.4145,
+     "local+delta": 0.4525
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.324,
+    "best": 0.3415,
+    "measured": {
+     "raw": 0.286,
+     "local": 0.324,
+     "local+delta": 0.3415
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz",
+    "chosen": 0.7175,
+    "best": 0.726,
+    "measured": {
+     "raw": 0.723,
+     "local": 0.7175,
+     "local+delta": 0.726
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz",
+    "chosen": 0.31,
+    "best": 0.3185,
+    "measured": {
+     "raw": 0.3185,
+     "local": 0.31,
+     "local+delta": 0.3015
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz",
+    "chosen": 0.435,
+    "best": 0.7265,
+    "measured": {
+     "raw": 0.7265,
+     "local": 0.435,
+     "local+delta": 0.4035
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz",
+    "chosen": 0.372,
+    "best": 0.372,
+    "measured": {
+     "raw": 0.3495,
+     "local": 0.372,
+     "local+delta": 0.366
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.61,
+    "best": 0.744,
+    "measured": {
+     "raw": 0.744,
+     "local": 0.61,
+     "local+delta": 0.6105
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz",
+    "chosen": 0.115,
+    "best": 0.3655,
+    "measured": {
+     "raw": 0.3655,
+     "local": 0.115,
+     "local+delta": 0.1325
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz",
+    "chosen": 0.743,
+    "best": 0.743,
+    "measured": {
+     "raw": 0.7255,
+     "local": 0.743,
+     "local+delta": 0.7325
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz",
+    "chosen": 0.3365,
+    "best": 0.374,
+    "measured": {
+     "raw": 0.374,
+     "local": 0.3365,
+     "local+delta": 0.3705
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz",
+    "chosen": 0.7255,
+    "best": 0.753,
+    "measured": {
+     "raw": 0.7225,
+     "local": 0.7255,
+     "local+delta": 0.753
+    }
+   },
+   {
+    "pair": "(0, 1)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.3685,
+    "best": 0.3805,
+    "measured": {
+     "raw": 0.355,
+     "local": 0.3685,
+     "local+delta": 0.3805
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.9435,
+    "best": 0.9435,
+    "measured": {
+     "raw": 0.934,
+     "local": 0.9435,
+     "local+delta": 0.936
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz",
+    "chosen": 0.93,
+    "best": 0.933,
+    "measured": {
+     "raw": 0.919,
+     "local": 0.93,
+     "local+delta": 0.933
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.956,
+    "best": 0.956,
+    "measured": {
+     "raw": 0.9515,
+     "local": 0.9495,
+     "local+delta": 0.956
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9575,
+    "best": 0.9575,
+    "measured": {
+     "raw": 0.9265,
+     "local": 0.9495,
+     "local+delta": 0.9575
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.952,
+    "best": 0.952,
+    "measured": {
+     "raw": 0.9465,
+     "local": 0.937,
+     "local+delta": 0.952
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9455,
+    "best": 0.9535,
+    "measured": {
+     "raw": 0.946,
+     "local": 0.9535,
+     "local+delta": 0.9455
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.947,
+    "best": 0.947,
+    "measured": {
+     "raw": 0.946,
+     "local": 0.9435,
+     "local+delta": 0.947
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.959,
+    "best": 0.9605,
+    "measured": {
+     "raw": 0.9565,
+     "local": 0.9605,
+     "local+delta": 0.959
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9545,
+    "best": 0.955,
+    "measured": {
+     "raw": 0.944,
+     "local": 0.955,
+     "local+delta": 0.9545
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.949,
+    "best": 0.962,
+    "measured": {
+     "raw": 0.9545,
+     "local": 0.962,
+     "local+delta": 0.949
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.956,
+    "best": 0.9615,
+    "measured": {
+     "raw": 0.9575,
+     "local": 0.9615,
+     "local+delta": 0.956
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.959,
+    "best": 0.964,
+    "measured": {
+     "raw": 0.9565,
+     "local": 0.964,
+     "local+delta": 0.959
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz",
+    "chosen": 0.953,
+    "best": 0.957,
+    "measured": {
+     "raw": 0.957,
+     "local": 0.953,
+     "local+delta": 0.952
+    }
+   },
+   {
+    "pair": "(16, 23)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.9625,
+    "best": 0.9625,
+    "measured": {
+     "raw": 0.9515,
+     "local": 0.9625,
+     "local+delta": 0.9535
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.932,
+    "best": 0.9415,
+    "measured": {
+     "raw": 0.9415,
+     "local": 0.9355,
+     "local+delta": 0.932
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9265,
+    "best": 0.927,
+    "measured": {
+     "raw": 0.927,
+     "local": 0.921,
+     "local+delta": 0.9265
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9565,
+    "best": 0.9565,
+    "measured": {
+     "raw": 0.9525,
+     "local": 0.9465,
+     "local+delta": 0.9565
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.946,
+    "best": 0.9505,
+    "measured": {
+     "raw": 0.9505,
+     "local": 0.95,
+     "local+delta": 0.946
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.944,
+    "best": 0.957,
+    "measured": {
+     "raw": 0.9465,
+     "local": 0.957,
+     "local+delta": 0.944
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz+pre",
+    "chosen": 0.957,
+    "best": 0.9585,
+    "measured": {
+     "raw": 0.949,
+     "local": 0.9585,
+     "local+delta": 0.957
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.957,
+    "best": 0.957,
+    "measured": {
+     "raw": 0.9535,
+     "local": 0.9475,
+     "local+delta": 0.957
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.955,
+    "best": 0.9605,
+    "measured": {
+     "raw": 0.947,
+     "local": 0.9605,
+     "local+delta": 0.955
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9435,
+    "best": 0.953,
+    "measured": {
+     "raw": 0.953,
+     "local": 0.95,
+     "local+delta": 0.9435
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.946,
+    "best": 0.9475,
+    "measured": {
+     "raw": 0.9445,
+     "local": 0.9475,
+     "local+delta": 0.946
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9555,
+    "best": 0.9555,
+    "measured": {
+     "raw": 0.942,
+     "local": 0.9535,
+     "local+delta": 0.9555
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.944,
+    "best": 0.95,
+    "measured": {
+     "raw": 0.9355,
+     "local": 0.95,
+     "local+delta": 0.944
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz+pre",
+    "chosen": 0.956,
+    "best": 0.9575,
+    "measured": {
+     "raw": 0.9505,
+     "local": 0.9575,
+     "local+delta": 0.956
+    }
+   },
+   {
+    "pair": "(141, 142)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.958,
+    "best": 0.958,
+    "measured": {
+     "raw": 0.954,
+     "local": 0.952,
+     "local+delta": 0.958
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.9335,
+    "best": 0.9505,
+    "measured": {
+     "raw": 0.9045,
+     "local": 0.9335,
+     "local+delta": 0.9505
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz",
+    "chosen": 0.9235,
+    "best": 0.9335,
+    "measured": {
+     "raw": 0.793,
+     "local": 0.9235,
+     "local+delta": 0.9335
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.953,
+    "best": 0.953,
+    "measured": {
+     "raw": 0.9445,
+     "local": 0.949,
+     "local+delta": 0.953
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.946,
+    "best": 0.9505,
+    "measured": {
+     "raw": 0.9395,
+     "local": 0.9505,
+     "local+delta": 0.946
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.953,
+    "best": 0.953,
+    "measured": {
+     "raw": 0.945,
+     "local": 0.948,
+     "local+delta": 0.953
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9475,
+    "best": 0.962,
+    "measured": {
+     "raw": 0.924,
+     "local": 0.962,
+     "local+delta": 0.9475
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.951,
+    "best": 0.9555,
+    "measured": {
+     "raw": 0.9465,
+     "local": 0.9555,
+     "local+delta": 0.951
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9545,
+    "best": 0.9545,
+    "measured": {
+     "raw": 0.917,
+     "local": 0.9505,
+     "local+delta": 0.9545
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.94,
+    "best": 0.953,
+    "measured": {
+     "raw": 0.953,
+     "local": 0.9415,
+     "local+delta": 0.94
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.958,
+    "best": 0.958,
+    "measured": {
+     "raw": 0.946,
+     "local": 0.9545,
+     "local+delta": 0.958
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.946,
+    "best": 0.948,
+    "measured": {
+     "raw": 0.945,
+     "local": 0.948,
+     "local+delta": 0.946
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9485,
+    "best": 0.954,
+    "measured": {
+     "raw": 0.946,
+     "local": 0.954,
+     "local+delta": 0.9485
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz",
+    "chosen": 0.956,
+    "best": 0.96,
+    "measured": {
+     "raw": 0.96,
+     "local": 0.956,
+     "local+delta": 0.955
+    }
+   },
+   {
+    "pair": "(151, 152)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.9485,
+    "best": 0.9535,
+    "measured": {
+     "raw": 0.9445,
+     "local": 0.9485,
+     "local+delta": 0.9535
+    }
+   }
+  ]
+ },
+ "E10": {
+  "summary": {
+   "n": 4,
+   "in_sample": false,
+   "allowed": [
+    "raw",
+    "local",
+    "cz"
+   ],
+   "qiskit_fractional(raw)": 0.23275,
+   "always_local": 0.335875,
+   "qiskit_no_fractional(cz)": 0.8800000000000001,
+   "theta_aware": 0.8800000000000001,
+   "oracle": 0.8800000000000001,
+   "picked_best_or_within_noise": 4,
+   "improved_vs_raw": 4,
+   "worse_vs_raw": 0,
+   "errors_raw": 0.76725,
+   "errors_theta": 0.12,
+   "choices": {
+    "raw": 0,
+    "local": 0,
+    "cz": 4
+   },
+   "two_qubit_gates_per_rzz": 2.0
+  },
+  "rows": [
+   {
+    "pair": "(10, 11)",
+    "j": 2,
+    "K": 12,
+    "choice": "cz",
+    "chosen": 0.8725,
+    "best": 0.8725,
+    "measured": {
+     "raw": 0.439,
+     "local": 0.014,
+     "cz": 0.8725
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 2,
+    "K": 24,
+    "choice": "cz",
+    "chosen": 0.862,
+    "best": 0.862,
+    "measured": {
+     "raw": 0.0495,
+     "local": 0.8065,
+     "cz": 0.862
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 3,
+    "K": 8,
+    "choice": "cz",
+    "chosen": 0.894,
+    "best": 0.894,
+    "measured": {
+     "raw": 0.34,
+     "local": 0.5115,
+     "cz": 0.894
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 3,
+    "K": 16,
+    "choice": "cz",
+    "chosen": 0.8915,
+    "best": 0.8915,
+    "measured": {
+     "raw": 0.1025,
+     "local": 0.0115,
+     "cz": 0.8915
+    }
+   }
+  ]
+ },
+ "E4": {
+  "summary": {
+   "n": 98,
+   "in_sample": true,
+   "allowed": [
+    "raw",
+    "local",
+    "local+delta"
+   ],
+   "qiskit_fractional(raw)": 0.8423622448979592,
+   "always_local": 0.8822295918367346,
+   "always_local+delta": 0.8885408163265306,
+   "theta_aware": 0.8884183673469388,
+   "oracle": 0.9010867346938776,
+   "picked_best_or_within_noise": 93,
+   "improved_vs_raw": 29,
+   "worse_vs_raw": 3,
+   "errors_raw": 0.1576377551020408,
+   "errors_theta": 0.11158163265306123,
+   "choices": {
+    "raw": 0,
+    "local": 30,
+    "local+delta": 68
+   },
+   "two_qubit_gates_per_rzz": 1.0
+  },
+  "rows": [
+   {
+    "pair": "(10, 11)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.905,
+    "best": 0.905,
+    "measured": {
+     "raw": 0.3595,
+     "local": 0.905,
+     "local+delta": 0.8965
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz",
+    "chosen": 0.746,
+    "best": 0.746,
+    "measured": {
+     "raw": 0.1095,
+     "local": 0.746,
+     "local+delta": 0.742
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz",
+    "chosen": 0.025,
+    "best": 0.5715,
+    "measured": {
+     "raw": 0.5715,
+     "local": 0.025,
+     "local+delta": 0.028
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.879,
+    "best": 0.879,
+    "measured": {
+     "raw": 0.0555,
+     "local": 0.879,
+     "local+delta": 0.8715
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz",
+    "chosen": 0.5415,
+    "best": 0.5415,
+    "measured": {
+     "raw": 0.347,
+     "local": 0.5415,
+     "local+delta": 0.5345
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz",
+    "chosen": 0.029,
+    "best": 0.2465,
+    "measured": {
+     "raw": 0.2465,
+     "local": 0.029,
+     "local+delta": 0.021
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9315,
+    "best": 0.9315,
+    "measured": {
+     "raw": 0.7685,
+     "local": 0.8195,
+     "local+delta": 0.9315
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9585,
+    "best": 0.9585,
+    "measured": {
+     "raw": 0.409,
+     "local": 0.537,
+     "local+delta": 0.9585
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.943,
+    "best": 0.943,
+    "measured": {
+     "raw": 0.8915,
+     "local": 0.933,
+     "local+delta": 0.943
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9455,
+    "best": 0.9455,
+    "measured": {
+     "raw": 0.718,
+     "local": 0.9375,
+     "local+delta": 0.9455
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.0175,
+    "best": 0.1075,
+    "measured": {
+     "raw": 0.1075,
+     "local": 0.022,
+     "local+delta": 0.0175
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.8195,
+    "best": 0.8195,
+    "measured": {
+     "raw": 0.3255,
+     "local": 0.7385,
+     "local+delta": 0.8195
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz",
+    "chosen": 0.9485,
+    "best": 0.949,
+    "measured": {
+     "raw": 0.949,
+     "local": 0.9485,
+     "local+delta": 0.946
+    }
+   },
+   {
+    "pair": "(10, 11)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.939,
+    "best": 0.9455,
+    "measured": {
+     "raw": 0.835,
+     "local": 0.939,
+     "local+delta": 0.9455
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.933,
+    "best": 0.933,
+    "measured": {
+     "raw": 0.924,
+     "local": 0.933,
+     "local+delta": 0.931
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz",
+    "chosen": 0.8995,
+    "best": 0.8995,
+    "measured": {
+     "raw": 0.8595,
+     "local": 0.8995,
+     "local+delta": 0.8835
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.924,
+    "best": 0.924,
+    "measured": {
+     "raw": 0.9155,
+     "local": 0.916,
+     "local+delta": 0.924
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.8315,
+    "best": 0.8555,
+    "measured": {
+     "raw": 0.8265,
+     "local": 0.8555,
+     "local+delta": 0.8315
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.949,
+    "best": 0.9535,
+    "measured": {
+     "raw": 0.9535,
+     "local": 0.9345,
+     "local+delta": 0.949
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9045,
+    "best": 0.917,
+    "measured": {
+     "raw": 0.917,
+     "local": 0.913,
+     "local+delta": 0.9045
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.965,
+    "best": 0.965,
+    "measured": {
+     "raw": 0.9505,
+     "local": 0.95,
+     "local+delta": 0.965
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.94,
+    "best": 0.9415,
+    "measured": {
+     "raw": 0.94,
+     "local": 0.9415,
+     "local+delta": 0.94
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.959,
+    "best": 0.959,
+    "measured": {
+     "raw": 0.952,
+     "local": 0.953,
+     "local+delta": 0.959
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.957,
+    "best": 0.958,
+    "measured": {
+     "raw": 0.9455,
+     "local": 0.958,
+     "local+delta": 0.957
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.968,
+    "best": 0.9685,
+    "measured": {
+     "raw": 0.9685,
+     "local": 0.963,
+     "local+delta": 0.968
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.955,
+    "best": 0.955,
+    "measured": {
+     "raw": 0.942,
+     "local": 0.9405,
+     "local+delta": 0.955
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9615,
+    "best": 0.9715,
+    "measured": {
+     "raw": 0.9705,
+     "local": 0.9715,
+     "local+delta": 0.9615
+    }
+   },
+   {
+    "pair": "(2, 3)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.946,
+    "best": 0.953,
+    "measured": {
+     "raw": 0.9525,
+     "local": 0.953,
+     "local+delta": 0.946
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.893,
+    "best": 0.9065,
+    "measured": {
+     "raw": 0.896,
+     "local": 0.893,
+     "local+delta": 0.9065
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz",
+    "chosen": 0.844,
+    "best": 0.8605,
+    "measured": {
+     "raw": 0.86,
+     "local": 0.844,
+     "local+delta": 0.8605
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.929,
+    "best": 0.9345,
+    "measured": {
+     "raw": 0.9215,
+     "local": 0.9345,
+     "local+delta": 0.929
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.906,
+    "best": 0.906,
+    "measured": {
+     "raw": 0.8985,
+     "local": 0.9035,
+     "local+delta": 0.906
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz",
+    "chosen": 0.9295,
+    "best": 0.9375,
+    "measured": {
+     "raw": 0.9345,
+     "local": 0.9295,
+     "local+delta": 0.9375
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz",
+    "chosen": 0.9175,
+    "best": 0.928,
+    "measured": {
+     "raw": 0.911,
+     "local": 0.9175,
+     "local+delta": 0.928
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9445,
+    "best": 0.9445,
+    "measured": {
+     "raw": 0.9445,
+     "local": 0.941,
+     "local+delta": 0.9445
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.94,
+    "best": 0.94,
+    "measured": {
+     "raw": 0.9365,
+     "local": 0.92,
+     "local+delta": 0.94
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9495,
+    "best": 0.95,
+    "measured": {
+     "raw": 0.95,
+     "local": 0.942,
+     "local+delta": 0.9495
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.951,
+    "best": 0.951,
+    "measured": {
+     "raw": 0.937,
+     "local": 0.945,
+     "local+delta": 0.951
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.952,
+    "best": 0.952,
+    "measured": {
+     "raw": 0.9475,
+     "local": 0.95,
+     "local+delta": 0.952
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.953,
+    "best": 0.953,
+    "measured": {
+     "raw": 0.9515,
+     "local": 0.9525,
+     "local+delta": 0.953
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz",
+    "chosen": 0.95,
+    "best": 0.96,
+    "measured": {
+     "raw": 0.957,
+     "local": 0.95,
+     "local+delta": 0.96
+    }
+   },
+   {
+    "pair": "(91, 98)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.9575,
+    "best": 0.9595,
+    "measured": {
+     "raw": 0.9595,
+     "local": 0.9575,
+     "local+delta": 0.959
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.901,
+    "best": 0.9165,
+    "measured": {
+     "raw": 0.8385,
+     "local": 0.901,
+     "local+delta": 0.9165
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz",
+    "chosen": 0.878,
+    "best": 0.8785,
+    "measured": {
+     "raw": 0.6695,
+     "local": 0.878,
+     "local+delta": 0.8785
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9185,
+    "best": 0.926,
+    "measured": {
+     "raw": 0.8955,
+     "local": 0.926,
+     "local+delta": 0.9185
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.919,
+    "best": 0.9195,
+    "measured": {
+     "raw": 0.757,
+     "local": 0.9195,
+     "local+delta": 0.919
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9305,
+    "best": 0.9515,
+    "measured": {
+     "raw": 0.922,
+     "local": 0.9515,
+     "local+delta": 0.9305
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9215,
+    "best": 0.9295,
+    "measured": {
+     "raw": 0.8825,
+     "local": 0.9295,
+     "local+delta": 0.9215
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.927,
+    "best": 0.9385,
+    "measured": {
+     "raw": 0.9375,
+     "local": 0.9385,
+     "local+delta": 0.927
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.936,
+    "best": 0.936,
+    "measured": {
+     "raw": 0.9125,
+     "local": 0.9345,
+     "local+delta": 0.936
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9335,
+    "best": 0.9435,
+    "measured": {
+     "raw": 0.9355,
+     "local": 0.9435,
+     "local+delta": 0.9335
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.95,
+    "best": 0.95,
+    "measured": {
+     "raw": 0.9305,
+     "local": 0.9455,
+     "local+delta": 0.95
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9475,
+    "best": 0.9475,
+    "measured": {
+     "raw": 0.9365,
+     "local": 0.929,
+     "local+delta": 0.9475
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.955,
+    "best": 0.956,
+    "measured": {
+     "raw": 0.944,
+     "local": 0.956,
+     "local+delta": 0.955
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz+pre",
+    "chosen": 0.928,
+    "best": 0.9375,
+    "measured": {
+     "raw": 0.9375,
+     "local": 0.9365,
+     "local+delta": 0.928
+    }
+   },
+   {
+    "pair": "(12, 13)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.938,
+    "best": 0.9545,
+    "measured": {
+     "raw": 0.9475,
+     "local": 0.9545,
+     "local+delta": 0.938
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.8,
+    "best": 0.8,
+    "measured": {
+     "raw": 0.775,
+     "local": 0.797,
+     "local+delta": 0.8
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz+pre",
+    "chosen": 0.846,
+    "best": 0.8545,
+    "measured": {
+     "raw": 0.7365,
+     "local": 0.8545,
+     "local+delta": 0.846
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.8255,
+    "best": 0.8255,
+    "measured": {
+     "raw": 0.823,
+     "local": 0.825,
+     "local+delta": 0.8255
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.916,
+    "best": 0.916,
+    "measured": {
+     "raw": 0.9135,
+     "local": 0.9035,
+     "local+delta": 0.916
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.85,
+    "best": 0.85,
+    "measured": {
+     "raw": 0.8435,
+     "local": 0.844,
+     "local+delta": 0.85
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz+pre",
+    "chosen": 0.924,
+    "best": 0.933,
+    "measured": {
+     "raw": 0.933,
+     "local": 0.9235,
+     "local+delta": 0.924
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.8485,
+    "best": 0.8485,
+    "measured": {
+     "raw": 0.8305,
+     "local": 0.8365,
+     "local+delta": 0.8485
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9295,
+    "best": 0.9355,
+    "measured": {
+     "raw": 0.9175,
+     "local": 0.9355,
+     "local+delta": 0.9295
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.835,
+    "best": 0.845,
+    "measured": {
+     "raw": 0.826,
+     "local": 0.835,
+     "local+delta": 0.845
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.96,
+    "best": 0.96,
+    "measured": {
+     "raw": 0.956,
+     "local": 0.958,
+     "local+delta": 0.96
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.848,
+    "best": 0.857,
+    "measured": {
+     "raw": 0.83,
+     "local": 0.857,
+     "local+delta": 0.848
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9615,
+    "best": 0.9615,
+    "measured": {
+     "raw": 0.952,
+     "local": 0.9525,
+     "local+delta": 0.9615
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz",
+    "chosen": 0.8435,
+    "best": 0.8655,
+    "measured": {
+     "raw": 0.8655,
+     "local": 0.8435,
+     "local+delta": 0.846
+    }
+   },
+   {
+    "pair": "(21, 36)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.946,
+    "best": 0.946,
+    "measured": {
+     "raw": 0.941,
+     "local": 0.946,
+     "local+delta": 0.944
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.892,
+    "best": 0.892,
+    "measured": {
+     "raw": 0.8685,
+     "local": 0.892,
+     "local+delta": 0.892
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz",
+    "chosen": 0.806,
+    "best": 0.806,
+    "measured": {
+     "raw": 0.677,
+     "local": 0.806,
+     "local+delta": 0.795
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.927,
+    "best": 0.927,
+    "measured": {
+     "raw": 0.9015,
+     "local": 0.916,
+     "local+delta": 0.927
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.922,
+    "best": 0.922,
+    "measured": {
+     "raw": 0.85,
+     "local": 0.9025,
+     "local+delta": 0.922
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.943,
+    "best": 0.95,
+    "measured": {
+     "raw": 0.9415,
+     "local": 0.95,
+     "local+delta": 0.943
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9335,
+    "best": 0.935,
+    "measured": {
+     "raw": 0.9145,
+     "local": 0.935,
+     "local+delta": 0.9335
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.934,
+    "best": 0.934,
+    "measured": {
+     "raw": 0.9315,
+     "local": 0.934,
+     "local+delta": 0.934
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9365,
+    "best": 0.942,
+    "measured": {
+     "raw": 0.9305,
+     "local": 0.942,
+     "local+delta": 0.9365
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.932,
+    "best": 0.932,
+    "measured": {
+     "raw": 0.927,
+     "local": 0.932,
+     "local+delta": 0.9255
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz",
+    "chosen": 0.959,
+    "best": 0.959,
+    "measured": {
+     "raw": 0.9305,
+     "local": 0.959,
+     "local+delta": 0.947
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz",
+    "chosen": 0.934,
+    "best": 0.9385,
+    "measured": {
+     "raw": 0.9385,
+     "local": 0.934,
+     "local+delta": 0.9365
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.941,
+    "best": 0.952,
+    "measured": {
+     "raw": 0.9215,
+     "local": 0.952,
+     "local+delta": 0.941
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9385,
+    "best": 0.9465,
+    "measured": {
+     "raw": 0.9325,
+     "local": 0.9465,
+     "local+delta": 0.9385
+    }
+   },
+   {
+    "pair": "(32, 33)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9345,
+    "best": 0.95,
+    "measured": {
+     "raw": 0.95,
+     "local": 0.947,
+     "local+delta": 0.9345
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 1,
+    "K": 24,
+    "choice": "frac+rz",
+    "chosen": 0.9105,
+    "best": 0.9105,
+    "measured": {
+     "raw": 0.874,
+     "local": 0.9105,
+     "local+delta": 0.9075
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 1,
+    "K": 48,
+    "choice": "frac+rz",
+    "chosen": 0.8425,
+    "best": 0.843,
+    "measured": {
+     "raw": 0.6935,
+     "local": 0.8425,
+     "local+delta": 0.843
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 2,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.945,
+    "best": 0.95,
+    "measured": {
+     "raw": 0.935,
+     "local": 0.95,
+     "local+delta": 0.945
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 2,
+    "K": 24,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9125,
+    "best": 0.9125,
+    "measured": {
+     "raw": 0.86,
+     "local": 0.912,
+     "local+delta": 0.9125
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 3,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9475,
+    "best": 0.9545,
+    "measured": {
+     "raw": 0.93,
+     "local": 0.9545,
+     "local+delta": 0.9475
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 3,
+    "K": 16,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9235,
+    "best": 0.931,
+    "measured": {
+     "raw": 0.888,
+     "local": 0.931,
+     "local+delta": 0.9235
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 4,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.954,
+    "best": 0.956,
+    "measured": {
+     "raw": 0.933,
+     "local": 0.956,
+     "local+delta": 0.954
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 4,
+    "K": 12,
+    "choice": "frac+rz+pre",
+    "chosen": 0.94,
+    "best": 0.9405,
+    "measured": {
+     "raw": 0.8805,
+     "local": 0.9405,
+     "local+delta": 0.94
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 6,
+    "K": 4,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9515,
+    "best": 0.9515,
+    "measured": {
+     "raw": 0.95,
+     "local": 0.948,
+     "local+delta": 0.9515
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 6,
+    "K": 8,
+    "choice": "frac+rz+pre",
+    "chosen": 0.9385,
+    "best": 0.944,
+    "measured": {
+     "raw": 0.92,
+     "local": 0.944,
+     "local+delta": 0.9385
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 8,
+    "K": 3,
+    "choice": "frac+rz+pre",
+    "chosen": 0.954,
+    "best": 0.954,
+    "measured": {
+     "raw": 0.9495,
+     "local": 0.95,
+     "local+delta": 0.954
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 8,
+    "K": 6,
+    "choice": "frac+rz+pre",
+    "chosen": 0.944,
+    "best": 0.944,
+    "measured": {
+     "raw": 0.93,
+     "local": 0.9405,
+     "local+delta": 0.944
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 12,
+    "K": 2,
+    "choice": "frac+rz",
+    "chosen": 0.96,
+    "best": 0.966,
+    "measured": {
+     "raw": 0.95,
+     "local": 0.96,
+     "local+delta": 0.966
+    }
+   },
+   {
+    "pair": "(14, 15)",
+    "j": 12,
+    "K": 4,
+    "choice": "frac+rz",
+    "chosen": 0.9535,
+    "best": 0.9535,
+    "measured": {
+     "raw": 0.9375,
+     "local": 0.9535,
+     "local+delta": 0.9485
+    }
+   }
+  ]
+ }
+}

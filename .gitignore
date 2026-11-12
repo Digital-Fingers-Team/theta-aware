@@ -1,4 +1,4 @@
-.ibm_key
+.ibm_key*
 .venv/
 __pycache__/
 *.pyc

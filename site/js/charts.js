@@ -199,8 +199,56 @@ function h2(stage, R) {
   text(svg, 84, 425, 'Projection, not data: 8-qubit lines from the 14 calibrated pairs; fidelity × gate survival.', 'cnote', { fill: C.proj });
 }
 
+/** Compiler replay: the compiler run on past jobs' circuits, scored by what the hardware measured. */
+function replay(stage, R) {
+  const K = R.compiler;
+  const svg = newSvg(stage, 680, 480);
+  const groups = [['E4 · marrakesh', K.e4], ['E6 · kingston *', K.e6], ['E10 · pair (10, 11) *', K.e10]];
+  const f = frame(svg, { left: 84, top: 50, width: 560, height: 300 }, {
+    x: [0, groups.length], y: [0, 1], xticks: [], yticks: [0, 0.25, 0.5, 0.75, 1], yfmt: (v) => v.toFixed(2),
+    ylabel: 'mean measured success', title: 'The compiler on real jobs, using only earlier calibrations',
+  });
+  const bars = [['qiskit', 'Qiskit (fractional)', C.grey], ['theta', 'θ-Aware', C.eps], ['oracle', 'best possible', C.good]];
+  const bw = 0.24;
+  groups.forEach(([name, g], i) => {
+    bars.forEach(([k, , col], j) => {
+      const x = f.sx(i + 0.14 + j * (bw + 0.01)), y = f.sy(g[k]), w = f.sx(bw) - f.sx(0);
+      el('rect', { x, y, width: w, height: f.sy(0) - y, fill: col, rx: 3 }, f.g);
+      text(f.g, x + w / 2, y - 6, g[k].toFixed(2), 'tick', { 'text-anchor': 'middle', fill: '#e9edf5' });
+    });
+    text(f.g, f.sx(i + 0.5), f.sy(0) + 20, name, 'tick', { 'text-anchor': 'middle' });
+    text(f.g, f.sx(i + 0.5), f.sy(0) + 38, `n = ${g.n} · best choice ${g.best}/${g.n}`, 'tick', { 'text-anchor': 'middle', fill: C.grey });
+  });
+  bars.forEach(([, n, col], j) => text(svg, 120 + j * 170, 425, `■ ${n}`, 'tick', { fill: col }));
+  text(svg, 84, 450, '* held out. Measured outcomes of past jobs (14 Oct 2026).', 'cnote');
+  text(svg, 84, 466, '"Best choice": within 2 standard errors of the best measured option.', 'cnote');
+}
+
+/** Compiler benchmark: errors and two-qubit gates (simulation). */
+function bench(stage, R) {
+  const S = R.compiler.sim;
+  const svg = newSvg(stage, 680, 480);
+  const pols = [['frac', 'Qiskit, fractional', C.grey], ['cz', 'Qiskit, CZ only', C.cz], ['theta', 'θ-Aware', C.eps], ['theta+layout', 'θ-Aware + layout', C.good]];
+  const vals = pols.map(([k]) => S.err[k]);
+  const lo = Math.pow(10, Math.floor(Math.log10(Math.min(...vals) * 0.8))), hi = Math.pow(10, Math.ceil(Math.log10(Math.max(...vals) * 1.2)));
+  const ticks = []; for (let t = lo; t <= hi * 1.001; t *= 10) ticks.push(t);
+  const f = frame(svg, { left: 84, top: 50, width: 560, height: 290 }, {
+    x: [0, pols.length], y: [lo, hi], log: true, xticks: [], yticks: ticks, yfmt: (v) => String(Number(v.toPrecision(1))),
+    ylabel: 'state infidelity (log)', title: `Simulated algorithm circuits (${S.n}, 6 qubits)`,
+  });
+  pols.forEach(([k, n, col], i) => {
+    const x = f.sx(i + 0.2), w = f.sx(0.6) - f.sx(0), y = f.sy(S.err[k]);
+    el('rect', { x, y, width: w, height: f.sy(lo) - y, fill: col, rx: 3 }, f.g);
+    text(f.g, x + w / 2, y - 6, S.err[k].toExponential(1), 'tick', { 'text-anchor': 'middle', fill: '#e9edf5' });
+    text(f.g, f.sx(i + 0.5), f.sy(lo) + 20, n, 'tick', { 'text-anchor': 'middle' });
+    text(f.g, f.sx(i + 0.5), f.sy(lo) + 38, `${S.g2[k].toFixed(1)} two-qubit gates`, 'tick', { 'text-anchor': 'middle', fill: C.grey });
+  });
+  text(svg, 84, 430, 'Projection, not data: measured gate parameters plus measured-size drift;', 'cnote', { fill: C.proj });
+  text(svg, 84, 446, 'single-qubit gates and readout ideal. Lower is better.', 'cnote', { fill: C.proj });
+}
+
 export function drawChart(name, stage, D, R) {
-  const fns = { problem: () => problem(stage, D), model: () => model(stage, D), coherent: () => coherent(stage, D), correction: () => correction(stage, D), e10: () => e10(stage, R), h2: () => h2(stage, R) };
+  const fns = { problem: () => problem(stage, D), model: () => model(stage, D), coherent: () => coherent(stage, D), correction: () => correction(stage, D), e10: () => e10(stage, R), h2: () => h2(stage, R), replay: () => replay(stage, R), bench: () => bench(stage, R) };
   fns[name]?.();
 }
 export { piLabel };
